@@ -1,0 +1,4 @@
+export const data = ["Bartek","Kacper","Monika","Karol","Ewa","Robert","Stefan","Ola","Adam","Monika","Stefan","Karol","Kacper","Stefan","Janek","Stefan","Karol","Karol","Monika","Kacper","Adam","Piotrek","Piotrek","Robert","Karol","Monika","Janek","Adam","Ola","Robert","Ola","Robert","Stefan","Karol","Stefan","Stefan","Monika","Bartek","Adam","Karol","Bartek","Stefan","Ewa","Bartek","Karol","Kacper","Robert","Bartek","Robert","Bartek","Karol","Ewa","Stefan","Janek","Kacper","Adam","Ola","Ola","Adam","Robert","Karol","Karol","Ewa","Bartek","Piotrek","Piotrek","Ewa","Karol","Robert","Robert","Karol","Karol","Ola","Karol","Bartek","Adam","Stefan","Monika","Stefan","Janek","Robert","Ewa","Ola","Kacper","Piotrek","Stefan","Monika","Ewa","Adam","Stefan","Robert","Janek","Janek","Ola","Stefan","Bartek","Ola","Janek","Ewa","Karol",];
+
+
+//Zmodyfikować skrypt tak, zeby była to tablica obiektów
