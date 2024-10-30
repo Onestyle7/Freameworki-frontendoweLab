@@ -42,7 +42,7 @@ function randomDate(min, max){
 // Funkcja losująca kolor oczu
 
 function randomEyeColor(){
-    const colors = ['blue', 'green', 'brown', 'grey'];
+    const colors = ['niebieskie', 'zielone', 'brązowe', 'szare'];
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
