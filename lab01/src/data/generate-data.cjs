@@ -19,7 +19,8 @@ fs.readFile('./names.txt', 'utf8', (err, data) => {
             id: i + 1,
             name: randomName,
             birth: randomDate(new Date(1950, 0, 1), new Date(2010, 0, 1)), // Losowa data urodzenia
-            eyes: randomEyeColor()  // Losowy kolor oczu
+            eyes: randomEyeColor(),  // Losowy kolor oczu
+            rating: Math.floor(Math.random() * 11) //Losowa ocena od 0 do 10
         };
         content += JSON.stringify(person) + ",\n";
     }
