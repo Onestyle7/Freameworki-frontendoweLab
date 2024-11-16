@@ -99,3 +99,5 @@ export const data = [{"id":1,"name":"Janek","birth":"1972-01-30","eyes":"szare",
     {"id":99,"name":"Monika","birth":"1994-10-20","eyes":"szare","rating":3},
     {"id":100,"name":"Kacper","birth":"1962-01-26","eyes":"brązowe","rating":9},
     ];
+
+export default data;

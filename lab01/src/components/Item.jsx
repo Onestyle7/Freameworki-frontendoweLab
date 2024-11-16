@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Card from "react-bootstrap/Card";
 import RatingBar from "./RatingBar";
+import AppContext from "../data/AppContext";
 
-export default function Item({ name, id, rating, dispatch }) {
+export default function Item({ name, id, rating }) {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
+  const { dispatch } = useContext(AppContext);
 
   const handleRate = () => {
     dispatch({
