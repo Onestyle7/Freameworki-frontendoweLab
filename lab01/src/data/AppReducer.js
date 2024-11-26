@@ -10,6 +10,9 @@ export default function AppReducer(state, action) {
       return state.map((item) =>
         item.id === action.id ? { ...item, rating: action.rating } : item
       );
+    case "add":
+      console.log("Dodawanie obiektu:", action.item);
+      return [...state, action.item];
     default:
       return state;
   }

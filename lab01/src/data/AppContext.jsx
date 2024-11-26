@@ -1,8 +1,8 @@
-import React, { createContext } from 'react';
+import React, { createContext } from "react";
 
 const AppContext = createContext({
-    items: [],
-    dispatch: null
+  items: [],
+  dispatch: null,
 });
 
 export default AppContext;

@@ -1,58 +1,47 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup"; // Dodano grupę przycisków
 import RatingBar from "./RatingBar";
 import AppContext from "../data/AppContext";
 
-export default function Item({ name, id, rating }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [newName, setNewName] = useState(name);
+export default function Item({ name, id, rating, onEditClick }) {
   const { dispatch } = useContext(AppContext);
 
   const handleRate = () => {
     dispatch({
       type: "rate",
-      id: id,
+      id,
       rating: rating < 10 ? rating + 1 : 0,
     });
   };
 
-  const handleEdit = () => {
-    setIsEditing(true);
-  };
-
-  const handleSave = () => {
-    dispatch({
-      type: "edit",
-      id: id,
-      name: newName,
-    });
-    setIsEditing(false);
-  };
-
   return (
-    <Card
-      style={{ width: "10rem" }}
-      className="border mb-2 p-2 ms-2 shadow-sm"
-      key={id}
-    >
-      <Card.Body>
-        {isEditing ? (
-          <input
-            type="text"
-            value={newName}
-            onChange={(e) => setNewName(e.target.value)}
-            onBlur={handleSave} // Zapisz po opuszczeniu pola
-            onKeyPress={(e) => {
-              if (e.key === "Enter") handleSave();
-            }}
-          />
-        ) : (
-          <Card.Title>{name}</Card.Title>
-        )}
-        <RatingBar rate={rating} />
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={() => dispatch({ type: "delete", id })}>Delete</button>
-        <button onClick={handleRate}>Rate</button>
+    <Card className="shadow-sm border-0 h-100">
+      <Card.Body className="d-flex flex-column justify-content-between">
+        <div>
+          <Card.Title className="text-center">{name}</Card.Title>
+          <div className="text-center">
+            <RatingBar rate={rating} />
+          </div>
+        </div>
+        <div className="d-flex justify-content-center mt-3">
+          <ButtonGroup>
+            <Button variant="outline-primary" size="sm" onClick={onEditClick}>
+              Edit
+            </Button>
+            <Button
+              variant="outline-danger"
+              size="sm"
+              onClick={() => dispatch({ type: "delete", id })}
+            >
+              Delete
+            </Button>
+            <Button variant="outline-success" size="sm" onClick={handleRate}>
+              Rate
+            </Button>
+          </ButtonGroup>
+        </div>
       </Card.Body>
     </Card>
   );
